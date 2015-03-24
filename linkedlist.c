@@ -44,7 +44,7 @@ void agregaVertice(vertice ** vertices, int value){
 	vertice * v = (vertice *)calloc(1, sizeof(vertice));
 	v->value = value;
 	v->vertice;
-	v->artista;
+	v->arista;
 
 
 
@@ -62,7 +62,7 @@ void agregaVertice(vertice ** vertices, int value){
 }
 
 void conectaNodos(vertice * vertices, vertice * verticeConectado){
-	artista * aristas = (artista *)calloc(1, sizeof(artista));
+	arista * aristas = (arista *)calloc(1, sizeof(arista));
 	aristas->arista;
 	aristas->vertice;
 	if (!vertices->arista)
@@ -71,11 +71,11 @@ void conectaNodos(vertice * vertices, vertice * verticeConectado){
 	}
 	else
 	{
-		arista * artistasDos = vertices->arista;
-		while(artistasDos->arista){
-			artistasDos = artistasDos->arista;
+		arista * aristasDos = vertices->arista;
+		while(aristasDos->arista){
+			aristasDos = aristasDos->arista;
 		}
-		artistasDos->artista = artistas;
+		aristasDos->arista = aristas;
 	}
 }
 

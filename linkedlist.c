@@ -40,9 +40,9 @@ void agregaArista(vertice * vertices, int grado, int probabilidad){
 	}
 }
 
-void agregaVertice(vertice ** vertices, int valor){
+void agregaVertice(vertice ** vertices, int value){
 	vertice * v = (vertice *)calloc(1, sizeof(vertice));
-	v->value = valor;
+	v->value = value;
 	v->vertice;
 	v->artista;
 
@@ -91,7 +91,7 @@ vertice * creaVertices(int grado){
 void visitaNodos(vertice * vertices){
 	arista * aristaVisitar = vertices->arista;
 	vertices->visitado = true;
-	printf("%d ", vertices->valor);
+	printf("%d ", vertices->value);
 	while(aristaVisitar){
 		if (!aristaVisitar->vertice->visitado)
 		{
@@ -103,10 +103,10 @@ void visitaNodos(vertice * vertices){
 
 void imprimete(vertice * vertices){
 	while(vertices){
-		printf("%d ->", vertices->valor);
+		printf("%d ->", vertices->value);
 		arista * aristas = vertices->arista;
 		while(aristas){
-			printf("%d", aristas->vertice->valor);
+			printf("%d", aristas->vertice->value);
 			aristas = aristas->arista;
 		}
 		printf("|l-\n");

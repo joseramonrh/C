@@ -8,6 +8,8 @@ typedef struct vertice vertice;
 typedef struct arista arista;
 
 void conectaNodos(vertice * vertices, vertice * verticeConectado);
+void agregaArista(vertice * vertices, int grado, int probabilidad);
+
 struct vertice
 {
 	int value;

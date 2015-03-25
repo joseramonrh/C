@@ -67,7 +67,7 @@ void agregaVertice(vertice ** vertices, int value){
 void conectaNodos(vertice * vertices, vertice * verticeConectado){
 	arista * aristas = (arista *)calloc(1, sizeof(arista));
 	aristas->arista;
-	aristas->vertice;
+	aristas->vertice = verticeConectado;
 	if (!vertices->arista)
 	{
 		vertices->arista = aristas;
@@ -90,7 +90,7 @@ vertice * creaVertices(int grado){
 		agregaVertice(&vertices, i);
 	}
 
-	return vertice;
+	return vertices;
 }
 
 void visitaNodos(vertice * vertices){
@@ -127,8 +127,6 @@ int main()
 	int probabilidad = 100;
 
 	vertice * vertices = creaVertices(grado);
-	printf("lalala %p\n", vertices);
-	imprimete(vertices);
 	agregaArista(vertices, grado, probabilidad);
 	printf("Grafo generado\n");
 	imprimete(vertices);

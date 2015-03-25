@@ -85,7 +85,7 @@ vertice * creaVertices(int grado){
 	vertice * vertices = NULL;
 	for (i = 0; i < grado; ++i)
 	{
-		agregaVertice(&vertice, i);
+		agregaVertice(&vertices, i);
 	}
 }
 

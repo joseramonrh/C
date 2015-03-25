@@ -11,13 +11,13 @@ struct vertice
 {
 	int value;
 	vertice *vertice;
-	vertice *arista;
+	arista *arista;
 	bool visitado;
 }
 struct arista
 {
 	arista *arista;
-	arista *vertice;
+	vertice *vertice;
 }
 void agregaArista(vertice * vertices, int grado, int probabilidad){
 	vertice * primerNodo = vertices;
@@ -54,7 +54,7 @@ void agregaVertice(vertice ** vertices, int value){
 	}
 	else{
 		vertice *current = *vertices;
-		while(*current->vertice != NULL){
+		while(*current->vertice){
 			current = current->vertice;
 		}
 		current->vertice = v;
@@ -97,7 +97,7 @@ void visitaNodos(vertice * vertices){
 		{
 			visitaNodos(aristaVisitar->vertice);
 		}
-		aristaVisitar = aristaVisitar->arista:
+		aristaVisitar = aristaVisitar->arista;
 	}
 }
 

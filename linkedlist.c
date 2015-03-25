@@ -16,12 +16,12 @@ struct vertice
 	vertice *vertice;
 	arista *arista;
 	bool visitado;
-}
+};
 struct arista
 {
 	arista *arista;
 	vertice *vertice;
-}
+};
 
 void agregaArista(vertice * vertices, int grado, int probabilidad){
 	vertice * primerNodo = vertices;

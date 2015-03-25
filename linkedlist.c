@@ -7,6 +7,7 @@
 typedef struct vertice vertice;
 typedef struct arista arista;
 
+void conectaNodos(vertice * vertices, vertice * verticeConectado);
 struct vertice
 {
 	int value;
@@ -140,12 +141,4 @@ int main()
 	printf("\n");
 
 	return 0;
-}
-
-
-	
-
-
-
-
 }

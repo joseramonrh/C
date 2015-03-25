@@ -29,6 +29,7 @@ void agregaArista(vertice * vertices, int grado, int probabilidad){
 
 	while(primerNodo){
 		cambianteNodo = vertices;
+		printf("lalalala\n" );
 		while(cambianteNodo){
 			if (cambianteNodo != primerNodo)
 			{
@@ -122,8 +123,8 @@ void imprimete(vertice * vertices){
 int main()
 {
 	srand((int)time(NULL));
-	int grado = 10;
-	int probabilidad = 20;
+	int grado = 5;
+	int probabilidad = 100;
 
 	vertice * vertices = creaVertices(grado);
 	agregaArista(vertices, grado, probabilidad);

@@ -20,6 +20,7 @@ struct arista
 	arista *arista;
 	vertice *vertice;
 }
+
 void agregaArista(vertice * vertices, int grado, int probabilidad){
 	vertice * primerNodo = vertices;
 	vertice * cambianteNodo;
@@ -85,7 +86,7 @@ vertice * creaVertices(int grado){
 	vertice * vertices = NULL;
 	for (i = 0; i < grado; ++i)
 	{
-		agregaVertice(&vertices, i);
+		agregaVertice(&vertices, i, probabilidad);
 	}
 }
 

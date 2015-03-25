@@ -56,7 +56,7 @@ void agregaVertice(vertice ** vertices, int value){
 	}
 	else{
 		vertice *current = *vertices;
-		while(*current->vertice){
+		while(current->vertice){
 			current = current->vertice;
 		}
 		current->vertice = v;
@@ -86,7 +86,7 @@ vertice * creaVertices(int grado){
 	vertice * vertices = NULL;
 	for (i = 0; i < grado; ++i)
 	{
-		agregaVertice(&vertices, i, probabilidad);
+		agregaVertice(&vertices, i);
 	}
 }
 

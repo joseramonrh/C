@@ -41,11 +41,15 @@ void MergeSort(int A[], int B[], int n){
 
 void Split(int A[], int B[], int inicio, int final){
 	int resultado = final-inicio;
-	if (resultado < 2)
+	if (resultado == 7)
 	{
 		return;
 	}
-	printf("%d", resultado);
+	printf("r %d\n", resultado);
+	printf("i %d\n", inicio);
+	printf("m %d\n", medio);
+	printf("f %d\n", final);
+
 	int medio = (final-inicio)/2;
 	Split(A, B, medio, final);
 	Split(A, B, inicio, medio);

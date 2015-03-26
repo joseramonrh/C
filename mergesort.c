@@ -46,8 +46,8 @@ void Split(int A[], int B[], int inicio, int final){
 	}
 
 	int medio = (final-inicio)/2;
-	printf("%d", final);
 	Split(A, B, medio, final);
+	printf("ei si llego aqui\n");
 	Split(A, B, inicio, medio);
 
 	Merge(A, B, inicio, medio, final);

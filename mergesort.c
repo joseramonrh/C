@@ -15,7 +15,8 @@ int main()
 	int i;
 	for (i = 0; i < 10; ++i)
 	{
-		first[i]=rand()%100;
+		printf("hola2\n");
+		first[i] = rand()%100;
 		printf("%d", first[i]);
 	}
 	

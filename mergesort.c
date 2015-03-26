@@ -27,7 +27,7 @@ int main()
 	return 0;
 }
 
-void MergeSort(int A[], int B[], n){
+void MergeSort(int A[], int B[], int n){
 	Split(A, B, 0, 10);
 }
 

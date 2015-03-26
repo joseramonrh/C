@@ -30,8 +30,9 @@ int main()
 	int j;
 	for (j = 0; i < 10; ++j)
 	{
-		printf("%d\n", first[j]);
+		printf("posicion %d = %d\n", j, first[j]);
 	}
+	printf("eu u\n");
 	return 0;
 }
 

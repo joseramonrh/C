@@ -13,16 +13,14 @@ int main()
 	printf("hola\n");
 	int first[10];
 	int i;
-	int count = 0;
+
 	for (i = 0; i < 10; i++)
 	{
-		printf("\n");
 		first[i] = rand()%100;
-		printf("%d", first[i]);
-		count++;
 	}
-	printf("%d\n", count);
+
 	int result[10];
+	printf("%d\n", result[6]);
 
 	MergeSort(first, result, 10);
 

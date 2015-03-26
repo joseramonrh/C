@@ -56,17 +56,18 @@ int main()
 	srand((int)time(NULL));
 
 	int first[10];
-	for (int i = 0; i < 10; ++i)
+	int i;
+	for (i = 0; i < 10; ++i)
 	{
-		values[i]=rand()%100;
+		first[i]=rand()%100;
 	}
 	int result[10];
 
 	BottomUpSort(first, result, 10);
-
-	for (int i = 0; i < 10; ++i)
+	int j;
+	for (j = 0; i < 10; ++j)
 	{
-		printf("%d\n", result[i]);
+		printf("%d\n", result[j]);
 	}
 	return 0;
 }

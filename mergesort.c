@@ -41,7 +41,7 @@ void MergeSort(int A[], int B[], int n){
 
 void Split(int A[], int B[], int inicio, int final){
 	int resultado = final-inicio;
-	if (resultado == 2)
+	if (resultado <= 2)
 	{
 		return;
 	}

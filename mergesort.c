@@ -28,7 +28,7 @@ int main()
 	MergeSort(first, result, 10);
 
 	int j;
-	for (j = 0; i < 10; ++j)
+	for (j = 0; j < 10; ++j)
 		printf("posicion %d = %d\n", j, first[j]);
 
 

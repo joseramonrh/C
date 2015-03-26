@@ -102,10 +102,10 @@ void visitaNodos(vertice * vertices, vertice * previo){
 	while(aristaVisitar){
 		if (!aristaVisitar->vertice->visitado)
 		{
-			visitaNodos(aristaVisitar->vertice previo);
+			visitaNodos(aristaVisitar->vertice, previo);
 		}
 		aristaVisitar = aristaVisitar->arista;
-		if (aristaVisitar->value == previo->value)
+		if (aristaVisitar->vertice->value == previo->value)
 		{
 			previo->ciclo = true;
 		}

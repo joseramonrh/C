@@ -137,7 +137,7 @@ int main()
 	printf("Grafo generado\n");
 	imprimete(vertices);
 	printf("recorre\n");
-	visitaNodos(vertices);
+	visitaNodos(vertices, vertices);
 
 	vertice * checa = vertices->vertice;
 	while(checa){

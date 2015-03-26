@@ -12,35 +12,24 @@ int main()
 	srand((int)time(NULL));
 
 	int first[10];
-
 	int i;
 	for (i = 0; i < 10; ++i)
 	{
 		first[i]=rand()%100;
 	}
+	int y;
+	for (y = 0; i < 10; ++y)
+	{
+		printf("%d\n", first[y]);
+	}
 	int result[10];
-	int w;
-	for (w = 0; i < 10; ++w)
-	{
-		result[w]=0;
-	}
-	int v;
-	for (v = 0; i < 10; ++v)
-	{
-		printf("%d\n", first[v]);
-	}
+
+	MergeSort(first, result, 10);
+
 	int j;
 	for (j = 0; i < 10; ++j)
 	{
 		printf("%d\n", result[j]);
-	}
-	return 0;
-	MergeSort(first, result, 10);
-
-	int r;
-	for (r = 0; i < 10; ++r)
-	{
-		printf("%d\n", result[r]);
 	}
 	return 0;
 }

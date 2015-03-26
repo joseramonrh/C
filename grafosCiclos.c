@@ -105,7 +105,7 @@ void visitaNodos(vertice * vertices, vertice * previo){
 			visitaNodos(aristaVisitar->vertice previo);
 		}
 		aristaVisitar = aristaVisitar->arista;
-		if (aristaVisitar == previo)
+		if (aristaVisitar->value == previo->value)
 		{
 			previo->ciclo = true;
 		}
@@ -144,7 +144,7 @@ int main()
 		if (!checa->visitado)
 		{
 			printf("Parte inconexa del grafo\n");
-			visitaNodos(checa);
+			visitaNodos(checa, checa);
 		}
 		checa = checa->vertice;
 	}

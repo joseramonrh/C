@@ -17,8 +17,9 @@ int main()
 	{
 		printf("hola2\n");
 		first[i] = rand()%100;
-		printf("%d", first[i]);
+		printf("%d, %d", i, first[i]);
 	}
+
 	
 	int result[10];
 

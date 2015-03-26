@@ -37,6 +37,7 @@ void BottomUpSort(int A[], int B[], int n)
   /* Each 1-element run in A is already "sorted". */
   /* Make successively longer sorted runs of length 2, 4, 8, 16... until whole array is sorted. */
   int i;
+  int width;
   for (width = 1; width < n; width = 2 * width)
     {
       /* Array A is full of runs of length width. */

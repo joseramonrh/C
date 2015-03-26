@@ -1,62 +1,60 @@
 #include<stdio.h>
 
- void imprimir(int *arreglo,int tam){
+ void imprimir(int first[],int n){
     int i;
-    for(i=0;i<tam;i++){
-        printf("%d, ",arreglo[i] );
+    for(i=0;i<n;i++){
+        printf("%d, ",first[i] );
     }
     printf("\n");
  }
- void heap(int *arreglo,int tam){
-    int valor,i,hijo,padre;
-    for(i = 1;i<tam;i++){
-        valor =  arreglo[i];
+ void heap(int first[],int n){
+    int valor,i,hijo,raiz;
+    for(i = 1;i<n;i++){
+        valor =  first[i];
         hijo = i;
-        padre = (hijo-1)/2;
+        raiz = (hijo-1)/2;
 
-        while(hijo > 0 && arreglo[padre] < valor){
-            arreglo[hijo] = arreglo[padre];
-            hijo = padre;
-            padre = (hijo-1)/2;
+        while(hijo > 0 && first[raiz] < valor){
+            first[hijo] = first[raiz];
+            hijo = raiz;
+            raiz = (hijo-1)/2;
         }
-        arreglo[hijo] = valor;
+        first[hijo] = valor;
     }
  }
 
-void heapSort(int *arreglo,int tam,int cont){
-    if(tam<1){
+void heapSort(int first[],int n,int cont){
+    if(n<1){
         return;
     }
-        int temp = arreglo[cont];
-        arreglo[0] = arreglo[tam-1];
-        arreglo[tam-1] = temp;
-        heap(arreglo,tam-1);
-        heapSort(arreglo,tam-1,cont);
+        int temp = first[cont];
+        first[0] = first[n-1];
+        first[n-1] = temp;
+        heap(first,n-1);
+        heapSort(first,n-1,cont);
 
 }
 
 
  int main(){
 
-    int tam,i,valor;
-    scanf("%d",&tam);
-    int arreglo[tam];
-    int arregloOrdenado[tam];
+    int n = 10;
+    int first[n];
+    int resultado[n];
+    int i;
 
-
-    for(i=0;i<tam;i++){
-        scanf("%d",&valor);
-        arreglo[i] = valor;
-        arregloOrdenado[i]= 0;
+    for(i=0;i<n;i++){
+        first[i] = n-i;
+        resultado[i]= 0;
     }
-    heap(arreglo,tam);
+    heap(first,n);
     printf("Antes del heapSort\n");
-    imprimir(arreglo,tam);
+    imprimir(first,n);
     printf("\n");
-    heapSort(arreglo,tam,0);
+    heapSort(first,n,0);
     printf("Despues del heapSort\n");
     printf("\n");
-    imprimir(arreglo,tam);
+    imprimir(first,n);
     return 0;
  }
 

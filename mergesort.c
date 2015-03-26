@@ -21,9 +21,6 @@ int main()
 		result[i] = 0;
 	}
 
-	
-
-
 
 	MergeSort(first, result, 10);
 

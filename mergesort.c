@@ -26,7 +26,7 @@ int main()
 
 
 	MergeSort(first, result, 10);
-
+printf("hola\n");
 	int j;
 	for (j = 0; i < 10; ++j)
 	{

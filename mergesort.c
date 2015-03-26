@@ -45,12 +45,14 @@ void Split(int A[], int B[], int inicio, int final){
 	{
 		return;
 	}
+	int medio = (final-inicio)/2;
+	
 	printf("r %d\n", resultado);
 	printf("i %d\n", inicio);
 	printf("m %d\n", medio);
 	printf("f %d\n", final);
 
-	int medio = (final-inicio)/2;
+	
 	Split(A, B, medio, final);
 	Split(A, B, inicio, medio);
 

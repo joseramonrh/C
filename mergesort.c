@@ -40,13 +40,13 @@ void MergeSort(int A[], int B[], int n){
 }
 
 void Split(int A[], int B[], int inicio, int final){
-	if (final-inicio < 2)
+	if ((final-inicio) < 2)
 	{
 		return;
 	}
 
 	int medio = (final-inicio)/2;
-
+	printf("%d\n", medio);
 	Split(A, B, medio, final);
 	Split(A, B, inicio, medio);
 

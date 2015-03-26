@@ -22,7 +22,7 @@ struct arista
 	arista *arista;
 	vertice *vertice;
 };
-
+arista
 void agregaArista(vertice * vertices, int grado, int probabilidad){
 	vertice * primerNodo = vertices;
 	vertice * cambianteNodo;
@@ -111,10 +111,10 @@ void imprimete(vertice * vertices){
 		printf("%d ->", vertices->value);
 		arista * aristas = vertices->arista;
 		while(aristas){
-			printf("%d", aristas->vertice->value);
+			printf("->%d", aristas->vertice->value);
 			aristas = aristas->arista;
 		}
-		printf("|l-\n");
+		printf("\n");
 		vertices = vertices->vertice;
 	}
 }

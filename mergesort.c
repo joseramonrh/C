@@ -45,6 +45,10 @@ void Split(int A[], int B[], int inicio, int final){
 	{
 		return;
 	}
+	if (resultado == 7)
+	{
+		return;
+	}
 	int medio = (final-inicio)/2;
 
 	printf("r %d\n", resultado);

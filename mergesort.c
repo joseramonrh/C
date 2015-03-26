@@ -18,7 +18,22 @@ int main()
 		first[i]=rand()%100;
 	}
 	int result[10];
-
+	int w
+	for (i = 0; i < 10; ++i)
+	{
+		result[i]=0;
+	}
+	int v
+	for (v = 0; i < 10; ++v)
+	{
+		printf("%d\n", first[v]);
+	}
+	int j;
+	for (j = 0; i < 10; ++j)
+	{
+		printf("%d\n", result[j]);
+	}
+	return 0;
 	MergeSort(first, result, 10);
 
 	int j;

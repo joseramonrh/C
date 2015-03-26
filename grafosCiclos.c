@@ -94,20 +94,20 @@ vertice * creaVertices(int grado){
 	return vertices;
 }
 
-void visitaNodos(vertice * vertices){
-	vertices->ciclo = true;
+void visitaNodos(vertice * vertices, vertice * previo){
 	arista * aristaVisitar = vertices->arista;
 	vertices->visitado = true;
+	previo = vertices;
 	printf("%d ", vertices->value);
 	while(aristaVisitar){
 		if (!aristaVisitar->vertice->visitado)
 		{
-			visitaNodos(aristaVisitar->vertice);
+			visitaNodos(aristaVisitar->vertice previo);
 		}
 		aristaVisitar = aristaVisitar->arista;
-		if (vertices->ciclo == true)
+		if (aristaVisitar == previo)
 		{
-			printf("Aqui hay un ciclo %d\n", vertices->value);
+			previo->ciclo = true;
 		}
 	}
 }

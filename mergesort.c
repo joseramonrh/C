@@ -2,7 +2,8 @@
 #include <time.h>
 #include <stdlib.h>
 
-
+void Copy(int A[], int B[], int inicio, int final);
+void Merge(int A[], int B[], int inicio, int medio, int final);
 
 int main()
 {	

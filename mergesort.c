@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-void BottomUpMerge(A[], iLeft, iRight, iEnd, B[])
+void BottomUpMerge(int A[], int iLeft, int iRight, int iEnd, int B[])
 {
-  i0 = iLeft;
-  i1 = iRight;
-  j;
+  int i0 = iLeft;
+  int i1 = iRight;
+  int j;
  
   /* While there are elements in the left or right runs */
   for (j = iLeft; j < iEnd; j++)
@@ -24,17 +24,19 @@ void BottomUpMerge(A[], iLeft, iRight, iEnd, B[])
     }
 }
  
-void CopyArray(B[], A[], n)
+void CopyArray(int B[], int A[], int n)
 {
+	int i;
     for(i = 0; i < n; i++)
         A[i] = B[i];
 }
  
 /* array A[] has the items to sort; array B[] is a work array */
-void BottomUpSort(A[], B[], n)
+void BottomUpSort(int A[], int B[], int n)
 {
   /* Each 1-element run in A is already "sorted". */
   /* Make successively longer sorted runs of length 2, 4, 8, 16... until whole array is sorted. */
+  int i;
   for (width = 1; width < n; width = 2 * width)
     {
       /* Array A is full of runs of length width. */

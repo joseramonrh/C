@@ -10,18 +10,15 @@ void Split(int A[], int B[], int inicio, int final);
 int main()
 {	
 	srand((int)time(NULL));
-
+	printf("hola\n");
 	int first[10];
 	int i;
 	for (i = 0; i < 10; ++i)
 	{
 		first[i]=rand()%100;
+		printf("%d", first[i]);
 	}
-	int y;
-	for (y = 0; i < 10; ++y)
-	{
-		printf("%d\n", first[y]);
-	}
+	
 	int result[10];
 
 	MergeSort(first, result, 10);

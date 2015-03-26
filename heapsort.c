@@ -1,5 +1,6 @@
 #include<stdio.h>
 
+ int gcount;
  void imprimir(int first[],int n){
     int i;
     for(i=0;i<n;i++){
@@ -32,6 +33,7 @@ void heapSort(int first[],int n,int cont){
         first[n-1] = temp;
         heap(first,n-1);
         heapSort(first,n-1,cont);
+        gcount++;
 
 }
 
@@ -48,11 +50,9 @@ void heapSort(int first[],int n,int cont){
         resultado[i]= 0;
     }
     heap(first,n);
-    printf("Antes del heapSort\n");
-    imprimir(first,n);
-    printf("\n");
     heapSort(first,n,0);
-    printf("Despues del heapSort\n");
+    printf("Comparaciones en heap: %d con %d tamaño", gcount, n);
+    printf("Arreglo ordenado en Heap\n");
     printf("\n");
     imprimir(first,n);
     return 0;

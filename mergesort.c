@@ -15,10 +15,10 @@ int main()
 	int i;
 	for (i = 0; i < 10; ++i)
 	{
+		printf("\n");
 		first[i] = rand()%100;
-		printf("%d, %d", i, first[i]);
+		printf("%d", first[i]);
 	}
-
 	
 	int result[10];
 

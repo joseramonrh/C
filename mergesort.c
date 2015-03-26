@@ -13,7 +13,7 @@ int main()
 	printf("hola\n");
 	int first[10];
 	int i;
-	for (i = 0; i < 10; ++i)
+	for (i = 0; i < 10; i++)
 	{
 		printf("\n");
 		first[i] = rand()%100;

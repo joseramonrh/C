@@ -4,6 +4,8 @@
 
 void Copy(int A[], int B[], int inicio, int final);
 void Merge(int A[], int B[], int inicio, int medio, int final);
+void MergeSort(int A[], int B[], int n);
+void Split(int A[], int B[], int inicio, int final);
 
 int main()
 {	

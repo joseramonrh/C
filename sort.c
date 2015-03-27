@@ -76,7 +76,6 @@ void Split(int A[], int B[], int inicio, int final);
     int i;  
     int hijo;
     int raiz;
-    gcountHeap++;
     for(i = 1;i<n;i++){
         valor =  first[i];
         hijo = i;
@@ -85,6 +84,7 @@ void Split(int A[], int B[], int inicio, int final);
             first[hijo] = first[raiz];
             hijo = raiz;
             raiz = (hijo-1)/2;
+            gcountHeap++;
         }
         first[hijo] = valor;
     }

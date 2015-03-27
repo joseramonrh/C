@@ -1,15 +1,73 @@
 #include<stdio.h>
 
  int gcount;
- void imprimir(int first[],int n){
-    int i;
-    for(i=0;i<n;i++){
-        printf("%d, ",first[i] );
+ 
+
+void Sort(int first[],int n,int cont);
+void imprimir(int first[],int n);
+void heap(int first[],int n);
+void comparaArreglos(int A[], int B[], n);
+
+ int main(){
+    srand((int)time(NULL));
+        
+        int first[10];
+        int firstResult[10];
+        comparaArreglos(first, firstResult, 10);
+
+        int second[100];
+        int secondResult[100];
+        comparaArreglos(second, secondResult, 100);
+
+        int second[100];
+        int secondResult[100];
+        comparaArreglos(second, secondResult, 100);
+
+        int third[1000];
+        int thirdResult[1000];
+        comparaArreglos(third, thirdResult, 1000);
+
+        int fourth[10000];
+        int fourthResult[10000];
+        comparaArreglos(fourth, fourthResult, 10000);
+
+
+
+
+    return 0;
+ }
+ void comparaArreglos(int A[], int B[], n){
+    int count = 0;
+     while(count < 4){
+        int A[n];
+        int B[n];
+
+        for(i=0;i<n;i++){
+            A[i] = rand()%100;
+            resultado[i]= 0;
+        }
+        heap(A,n);
+        Sort(A,n,0);
+        count++;
+        printf("Comparaciones en heap: %d con %d tamaño \n", gcount, n);
+        printf("Arreglo ordenado en Heap\n");
+        printf("\n");
+        imprimir(A,n);
+        gcount = 0;
     }
-    printf("\n");
+}
+
+
+void imprimir(int first[],int n){
+    int i;
+    for(i=0;i<n;i++)
+        printf("%d, ",first[i] );
  }
  void heap(int first[],int n){
     int valor,i,hijo,raiz;
+    int i;  
+    int hijo;
+    int raiz;
     for(i = 1;i<n;i++){
         valor =  first[i];
         hijo = i;
@@ -24,7 +82,7 @@
     }
  }
 
-void heapSort(int first[],int n,int cont){
+void Sort(int first[],int n,int cont){
     if(n<1){
         return;
     }
@@ -32,33 +90,10 @@ void heapSort(int first[],int n,int cont){
         first[0] = first[n-1];
         first[n-1] = temp;
         heap(first,n-1);
-        heapSort(first,n-1,cont);
+        Sort(first,n-1,cont);
         gcount++;
 
 }
-
-
- int main(){
-
-    int n = 10;
-    int first[n];
-    int resultado[n];
-    int i;
-
-    for(i=0;i<n;i++){
-        first[i] = n-i;
-        resultado[i]= 0;
-    }
-    heap(first,n);
-    heapSort(first,n,0);
-    printf("Comparaciones en heap: %d con %d tamaño", gcount, n);
-    printf("Arreglo ordenado en Heap\n");
-    printf("\n");
-    imprimir(first,n);
-    return 0;
- }
-
-
 
 
 

@@ -80,12 +80,11 @@ void Split(int A[], int B[], int inicio, int final);
         valor =  first[i];
         hijo = i;
         raiz = (hijo-1)/2;
-
+        gcountHeap++;
         while(hijo > 0 && first[raiz] < valor){
             first[hijo] = first[raiz];
             hijo = raiz;
             raiz = (hijo-1)/2;
-            gcountHeap++;
         }
         first[hijo] = valor;
     }

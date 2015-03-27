@@ -9,6 +9,9 @@ typedef struct arista arista;
 
 void conectaNodos(vertice * vertices, vertice * verticeConectado);
 void agregaArista(vertice * vertices, int grado, int probabilidad);
+
+bool ciclo = false;
+
 //LAS DOS ESTRUCTURAS
 struct vertice
 {
@@ -16,7 +19,6 @@ struct vertice
 	vertice *vertice;
 	arista *arista;
 	bool visitado;
-	bool ciclo;
 };
 struct arista
 {
@@ -100,15 +102,14 @@ vertice * creaVertices(int grado){
 void visitaNodos(vertice * vertices){
 	arista * aristaVisitar = vertices->arista;
 	vertices->visitado = true;
-	if (vertices->visitado)
-	{
-		printf("Ciclo\n");
-	}
 	printf("%d ", vertices->value);
 	while(aristaVisitar){
 		if (!aristaVisitar->vertice->visitado)
 		{
 			visitaNodos(aristaVisitar->vertice);
+		}
+		else{
+			ciclo = true;
 		}
 		aristaVisitar = aristaVisitar->arista;
 	}
@@ -131,8 +132,8 @@ void imprimete(vertice * vertices){
 int main()
 {
 	srand((int)time(NULL));
-	int grado = 5;
-	int probabilidad = 30;
+	int grado = 5;                       //GRADO
+	int probabilidad = rand()%100;
 
 	vertice * vertices = creaVertices(grado);
 	agregaArista(vertices, grado, probabilidad);

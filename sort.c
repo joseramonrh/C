@@ -65,8 +65,8 @@ void Split(int A[], int B[], int inicio, int final);
         printf("Comparaciones en heap: %d con %d tamaño \n", gcountHeap, n);
         printf("Comparaciones en Merge: %d con %d tamaño \n", gcountMerge, n);
         
-        imprimir(A, n);
-        imprimir(C, n);
+        imprimir(A,n);
+        imprimir(C,n);
 
         gcountHeap = 0;
         gcountMerge = 0;
@@ -157,6 +157,11 @@ void Copy(int A[], int B[], int inicio, int final){
         A[i] = B[i];
     }
 }
+void imprimir(int first[],int n){
+    int i;
+    for(i=0;i<n;i++)
+        printf("%d, ",first[i] );
+ }
 
 
 

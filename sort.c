@@ -85,10 +85,9 @@ void Split(int A[], int B[], int inicio, int final);
             first[hijo] = first[raiz];
             hijo = raiz;
             raiz = (hijo-1)/2;
-            
+            gcountHeap++;
         }
         first[hijo] = valor;
-        gcountHeap++;
     }
  }
 
@@ -122,7 +121,6 @@ void Split(int A[], int B[], int inicio, int final){
         return;
     }
     int medio = (final+inicio)/2;
-    gcountMerge++;
     Split(A, B, medio, final);
     Split(A, B, inicio, medio);
 
@@ -133,7 +131,6 @@ void Split(int A[], int B[], int inicio, int final){
 void Merge(int A[], int B[], int inicio, int medio, int final){
     int mergeInicio = inicio;
     int mergeMedio = medio;
-    gcountMerge++;
     int i;
     for (i = inicio; i < final; i++)
     {
@@ -147,6 +144,7 @@ void Merge(int A[], int B[], int inicio, int medio, int final){
             B[i] = A[mergeMedio];
             mergeMedio = mergeMedio + 1;
         }
+        gcountMerge*=4;
     }
 }
 

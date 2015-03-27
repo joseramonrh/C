@@ -60,7 +60,7 @@ void Split(int A[], int B[], int inicio, int final);
         }
         heap(A,n);
         Sort(A,n,0);
-        MergeSort(C, D, 10);
+        MergeSort(C, D, n);
         count++;
         printf("Comparaciones en heap: %d con %d tamaño \n", gcountHeap, n);
         printf("Comparaciones en Merge: %d con %d tamaño \n", gcountMerge, n);
@@ -80,6 +80,7 @@ void Split(int A[], int B[], int inicio, int final);
         valor =  first[i];
         hijo = i;
         raiz = (hijo-1)/2;
+        gcountHeap++;
         while(hijo > 0 && first[raiz] < valor){
             first[hijo] = first[raiz];
             hijo = raiz;
@@ -90,7 +91,6 @@ void Split(int A[], int B[], int inicio, int final);
  }
 
 void Sort(int first[],int n,int cont){
-    gcountHeap++;
     if(n<1){
         return;
     }

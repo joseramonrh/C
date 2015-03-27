@@ -108,8 +108,7 @@ void visitaNodos(vertice * vertices){
 		{
 			visitaNodos(aristaVisitar->vertice);
 		}
-		if (aristaVisitar->vertice->value == vertices->value)
-		{
+		else{
 				ciclo = true;
 		}
 		aristaVisitar = aristaVisitar->arista;
@@ -155,7 +154,7 @@ int main()
 	printf("\n");
 	if (ciclo)
 	{
-		printf("lhhb\n");
+		printf("Si hay ciclo\n");
 	}
 
 	return 0;

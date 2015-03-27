@@ -109,7 +109,7 @@ void Sort(int first[],int n,int cont){
 
 
 void MergeSort(int A[], int B[], int n){
-    Split(A, B, 0, 10);
+    Split(A, B, 0, n);
 }
 
 void Split(int A[], int B[], int inicio, int final){
@@ -159,7 +159,7 @@ void imprimir(int first[],int n){
     int i;
     for(i=0;i<n;i++)
         printf("%d, ",first[i] );
- }
+}
 
 
 

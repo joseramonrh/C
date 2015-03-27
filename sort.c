@@ -137,6 +137,7 @@ void Merge(int A[], int B[], int inicio, int medio, int final){
         {
             B[i] = A[mergeInicio];
             mergeInicio = mergeInicio + 1;
+            gcountMerge++;
                     
         }
         else{

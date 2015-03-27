@@ -63,6 +63,7 @@ void Split(int A[], int B[], int inicio, int final);
             D[i] = 0;
         }
         heap(A,n);
+        gcountHeap = 0;
         Sort(A,n,0);
         MergeSort(C, D, n);
         count++;

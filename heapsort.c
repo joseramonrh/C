@@ -11,9 +11,11 @@ void comparaArreglos(int A[], int B[], int n);
  int main(){
     srand((int)time(NULL));
         
-        int first[10];
-        int firstResult[10];
-        comparaArreglos(first, firstResult, 10);
+        int firstHeap[10];
+        int firstResultHeap[10];
+        int firstMerge[10];
+        int firstResulMerge[10];
+        comparaArreglos(first, firstResult, , firstMerge, firstResulMerge ,10);
 
         int second[100];
         int secondResult[100];
@@ -32,33 +34,29 @@ void comparaArreglos(int A[], int B[], int n);
 
     return 0;
  }
- void comparaArreglos(int A[], int B[], int n){
+ void comparaArreglos(int A[], int B[], int C[], int D[], int n){
     int count = 0;
      while(count < 4){
-        int A[n];
-        int B[n];
         int i;
         for(i=0;i<n;i++){
-            A[i] = rand()%100;
+            int random = rand()%100;
+            A[i] = random;
             B[i]= 0;
+            C[i] = random;
+            D[i] = 0;
         }
         heap(A,n);
         Sort(A,n,0);
         count++;
-        printf("Comparaciones en heap: %d con %d tamaño \n", gcount, n);
+        printf("Comparaciones en heap: %d con %d tamaño \n", gcountHeap, n);
         printf("Arreglo ordenado en Heap\n");
         printf("\n");
         imprimir(A,n);
-        gcount = 0;
+        gcountHeap = 0;
     }
 }
 
 
-void imprimir(int first[],int n){
-    int i;
-    for(i=0;i<n;i++)
-        printf("%d, ",first[i] );
- }
  void heap(int first[],int n){
     int valor;
     int i;  

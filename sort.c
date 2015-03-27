@@ -9,7 +9,7 @@
 void Sort(int first[],int n,int cont);
 void imprimir(int first[],int n);
 void heap(int first[],int n);
-void comparaArreglos(int A[], int B[], int n);
+void comparaArreglos(int A[], int B[], , int C[], int D[], int n);
 void Copy(int A[], int B[], int inicio, int final);
 void Merge(int A[], int B[], int inicio, int medio, int final);
 void MergeSort(int A[], int B[], int n);
@@ -22,7 +22,7 @@ void Split(int A[], int B[], int inicio, int final);
         int firstResultHeap[10];
         int firstMerge[10];
         int firstResulMerge[10];
-        comparaArreglos(first, firstResult, , firstMerge, firstResulMerge ,10);
+        comparaArreglos(firstHeap, firstResultHeap, , firstMerge, firstResulMerge ,10);
 /*
         int second[100];
         int secondResult[100];
@@ -54,7 +54,7 @@ void Split(int A[], int B[], int inicio, int final);
         }
         heap(A,n);
         Sort(A,n,0);
-        MergeSort(first, result, 10);
+        MergeSort(C, D, 10);
         count++;
         printf("Comparaciones en heap: %d con %d tamaño \n", gcountHeap, n);
         printf("Comparaciones en Merge: %d con %d tamaño \n", gcountMerge, n);

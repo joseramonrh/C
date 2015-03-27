@@ -144,7 +144,6 @@ void Merge(int A[], int B[], int inicio, int medio, int final){
             B[i] = A[mergeMedio];
             mergeMedio = mergeMedio + 1;
         }
-        gcountMerge+=4;
     }
 }
 
@@ -152,6 +151,7 @@ void Copy(int A[], int B[], int inicio, int final){
     int i;
     for (i = inicio; i < final; i++)
     {
+        gcountMerge++;
         A[i] = B[i];
     }
 }

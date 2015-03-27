@@ -132,7 +132,7 @@ int main()
 {
 	srand((int)time(NULL));
 	int grado = 5;
-	int probabilidad = 100;
+	int probabilidad = 30;
 
 	vertice * vertices = creaVertices(grado);
 	agregaArista(vertices, grado, probabilidad);

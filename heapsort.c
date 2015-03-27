@@ -19,10 +19,6 @@ void comparaArreglos(int A[], int B[], n);
         int secondResult[100];
         comparaArreglos(second, secondResult, 100);
 
-        int second[100];
-        int secondResult[100];
-        comparaArreglos(second, secondResult, 100);
-
         int third[1000];
         int thirdResult[1000];
         comparaArreglos(third, thirdResult, 1000);
@@ -44,7 +40,7 @@ void comparaArreglos(int A[], int B[], n);
 
         for(i=0;i<n;i++){
             A[i] = rand()%100;
-            resultado[i]= 0;
+            B[i]= 0;
         }
         heap(A,n);
         Sort(A,n,0);

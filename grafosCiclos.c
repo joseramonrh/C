@@ -100,14 +100,15 @@ vertice * creaVertices(int grado){
 void visitaNodos(vertice * vertices){
 	arista * aristaVisitar = vertices->arista;
 	vertices->visitado = true;
+	if (vertice->visitado)
+	{
+		printf("Ciclo\n");
+	}
 	printf("%d ", vertices->value);
 	while(aristaVisitar){
 		if (!aristaVisitar->vertice->visitado)
 		{
 			visitaNodos(aristaVisitar->vertice);
-		}
-		else{
-			aristaVisitar->vertice->ciclo = true;
 		}
 		aristaVisitar = aristaVisitar->arista;
 	}
@@ -139,14 +140,9 @@ int main()
 	imprimete(vertices);
 	printf("recorre\n");
 	visitaNodos(vertices);
-
+	printf("\n");
 	vertice * checa = vertices->vertice;
 	while(checa){
-		if (checa->ciclo)
-		{
-			printf("Ciclo\n");
-			printf("%d ", vertices->value);
-		}
 		if (!checa->visitado)
 		{
 			printf("Parte inconexa del grafo\n");

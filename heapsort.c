@@ -6,7 +6,7 @@
 void Sort(int first[],int n,int cont);
 void imprimir(int first[],int n);
 void heap(int first[],int n);
-void comparaArreglos(int A[], int B[], n);
+void comparaArreglos(int A[], int B[], int n);
 
  int main(){
     srand((int)time(NULL));
@@ -37,7 +37,7 @@ void comparaArreglos(int A[], int B[], n);
      while(count < 4){
         int A[n];
         int B[n];
-
+        int i;
         for(i=0;i<n;i++){
             A[i] = rand()%100;
             B[i]= 0;

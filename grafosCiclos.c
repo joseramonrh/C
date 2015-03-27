@@ -109,7 +109,10 @@ void visitaNodos(vertice * vertices){
 			visitaNodos(aristaVisitar->vertice);
 		}
 		else{
-			ciclo = true;
+			if (aristaVisitar->vertice->value == vertices->value)
+			{
+				ciclo = true;
+			}
 		}
 		aristaVisitar = aristaVisitar->arista;
 	}

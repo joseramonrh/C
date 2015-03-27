@@ -34,7 +34,7 @@ void Split(int A[], int B[], int inicio, int final);
         int thirdResultHeap[1000];
         int thirdMerge[1000];
         int thirdResultMerge[1000];
-        comparaArreglos(third, thirdResultHeap, thirdMerge, thirdResultMerge ,1000);
+        comparaArreglos(thirdHeap, thirdResultHeap, thirdMerge, thirdResultMerge ,1000);
 
         int fourthHeap[10000];
         int fourthResultHeap[10000];

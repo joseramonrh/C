@@ -109,7 +109,7 @@ void visitaNodos(vertice * vertices){
 		aristaVisitar = aristaVisitar->arista;
 		if (aristaVisitar->vertice->visitado)
 		{
-			ciclo = true;
+			vertices->ciclo = true;
 			printf("ciclo\n");
 		}
 	}

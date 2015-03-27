@@ -23,18 +23,24 @@ void Split(int A[], int B[], int inicio, int final);
         int firstMerge[10];
         int firstResulMerge[10];
         comparaArreglos(firstHeap, firstResultHeap, firstMerge, firstResulMerge ,10);
-/*
-        int second[100];
-        int secondResult[100];
-        comparaArreglos(second, secondResult, 100);
 
-        int third[1000];
-        int thirdResult[1000];
-        comparaArreglos(third, thirdResult, 1000);
+        int secondHeap[100];
+        int secondResultHeap[100];
+        int secondMerge[100];
+        int secondResultMerge[1000];
+        comparaArreglos(secondHeap, secondResultHeap, secondMerge, secondResultMerge, 100);
 
-        int fourth[10000];
-        int fourthResult[10000];
-        comparaArreglos(fourth, fourthResult, 10000);*/
+        int thirdHeap[1000];
+        int thirdResultHeap[1000];
+        int thirdMerge[1000];
+        int thirdResultMerge[1000];
+        comparaArreglos(third, thirdResultHeap, thirdMerge, thirdResultMerge ,1000);
+
+        int fourthHeap[10000];
+        int fourthResultHeap[10000];
+        int fourthMerge[10000];
+        int fourthResultMerge[10000];
+        comparaArreglos(fourthHeap, fourthResultHeap, fourthMerge, fourthResultMerge, 10000);
 
 
 
@@ -58,7 +64,7 @@ void Split(int A[], int B[], int inicio, int final);
         count++;
         printf("Comparaciones en heap: %d con %d tamaño \n", gcountHeap, n);
         printf("Comparaciones en Merge: %d con %d tamaño \n", gcountMerge, n);
-        printf("Arreglo ordenado en Heap\n");
+        
 
         gcountHeap = 0;
         gcountMerge = 0;

@@ -22,7 +22,7 @@ void Split(int A[], int B[], int inicio, int final);
         int firstResultHeap[10];
         int firstMerge[10];
         int firstResulMerge[10];
-        comparaArreglos(firstHeap, firstResultHeap, , firstMerge, firstResulMerge ,10);
+        comparaArreglos(firstHeap, firstResultHeap, firstMerge, firstResulMerge ,10);
 /*
         int second[100];
         int secondResult[100];

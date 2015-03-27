@@ -100,7 +100,7 @@ vertice * creaVertices(int grado){
 void visitaNodos(vertice * vertices){
 	arista * aristaVisitar = vertices->arista;
 	vertices->visitado = true;
-	if (vertice->visitado)
+	if (vertices->visitado)
 	{
 		printf("Ciclo\n");
 	}

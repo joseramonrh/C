@@ -9,7 +9,7 @@
 void Sort(int first[],int n,int cont);
 void imprimir(int first[],int n);
 void heap(int first[],int n);
-void comparaArreglos(int A[], int B[], , int C[], int D[], int n);
+void comparaArreglos(int A[], int B[], int C[], int D[], int n);
 void Copy(int A[], int B[], int inicio, int final);
 void Merge(int A[], int B[], int inicio, int medio, int final);
 void MergeSort(int A[], int B[], int n);

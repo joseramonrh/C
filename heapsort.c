@@ -36,7 +36,7 @@ void comparaArreglos(int A[], int B[], n);
 
     return 0;
  }
- void comparaArreglos(int A[], int B[], n){
+ void comparaArreglos(int A[], int B[], int n){
     int count = 0;
      while(count < 4){
         int A[n];
@@ -64,7 +64,7 @@ void imprimir(int first[],int n){
         printf("%d, ",first[i] );
  }
  void heap(int first[],int n){
-    int valor,i,hijo,raiz;
+    int valor;
     int i;  
     int hijo;
     int raiz;

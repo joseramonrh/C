@@ -106,12 +106,10 @@ void visitaNodos(vertice * vertices){
 		{
 			visitaNodos(aristaVisitar->vertice);
 		}
-		aristaVisitar = aristaVisitar->arista;
-		if (aristaVisitar->vertice->visitado)
-		{
-			vertices->ciclo = true;
-			printf("ciclo\n");
+		else{
+			aristaVisitar->vertice->ciclo = true;
 		}
+		aristaVisitar = aristaVisitar->arista;
 	}
 }
 
@@ -144,6 +142,11 @@ int main()
 
 	vertice * checa = vertices->vertice;
 	while(checa){
+		if (checa->ciclo)
+		{
+			printf("Ciclo\n");
+			printf("%d ", vertices->value);
+		}
 		if (!checa->visitado)
 		{
 			printf("Parte inconexa del grafo\n");

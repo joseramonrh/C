@@ -152,6 +152,10 @@ int main()
 		checa = checa->vertice;
 	}
 	printf("\n");
+	if (ciclo)
+	{
+		printf("lhhb\n");
+	}
 
 	return 0;
 }

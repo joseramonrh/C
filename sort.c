@@ -85,9 +85,10 @@ void Split(int A[], int B[], int inicio, int final);
             first[hijo] = first[raiz];
             hijo = raiz;
             raiz = (hijo-1)/2;
-            gcountHeap++;
+            
         }
         first[hijo] = valor;
+        gcountHeap++;
     }
  }
 

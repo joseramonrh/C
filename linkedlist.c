@@ -9,7 +9,7 @@ typedef struct arista arista;
 
 void conectaNodos(vertice * vertices, vertice * verticeConectado);
 void agregaArista(vertice * vertices, int grado, int probabilidad);
-
+//LAS DOS ESTRUCTURAS
 struct vertice
 {
 	int value;
@@ -23,6 +23,7 @@ struct arista
 	vertice *vertice;
 };
 
+//AGREGA LOS ARISTAS SI EL RANDOM ES MENOR QUE LA PROBA, Y LLAMA AL METODO CONECTA NODOS.
 void agregaArista(vertice * vertices, int grado, int probabilidad){
 	vertice * primerNodo = vertices;
 	vertice * cambianteNodo;
@@ -44,7 +45,7 @@ void agregaArista(vertice * vertices, int grado, int probabilidad){
 		primerNodo = primerNodo->vertice;
 	}
 }
-
+//AGREGA EL VERTICE, SI EL VERTICE NO APUNTA A NADA SE AGREGA EN SEGUIDA, SI NO SE AGREGA AL FINAL
 void agregaVertice(vertice ** vertices, int value){
 	vertice * v = (vertice *)calloc(1, sizeof(vertice));
 	v->value = value;
@@ -64,6 +65,7 @@ void agregaVertice(vertice ** vertices, int value){
 	}
 }
 
+//CONECTA LOS NODOS, SI EL VERTICE NO TIENE ARISTAS LA PONE AL PRINCIPIO, SI TIENE LA AGREGA AL FINAL
 void conectaNodos(vertice * vertices, vertice * verticeConectado){
 	arista * aristas = (arista *)calloc(1, sizeof(arista));
 	aristas->arista;
@@ -82,6 +84,7 @@ void conectaNodos(vertice * vertices, vertice * verticeConectado){
 	}
 }
 
+//LLAMA A AGREGA VERTICE
 vertice * creaVertices(int grado){
 	int i = 0;
 	vertice * vertices = NULL;
@@ -92,7 +95,7 @@ vertice * creaVertices(int grado){
 
 	return vertices;
 }
-
+//VISITA LOS NODOS
 void visitaNodos(vertice * vertices){
 	arista * aristaVisitar = vertices->arista;
 	vertices->visitado = true;

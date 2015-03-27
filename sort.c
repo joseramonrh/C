@@ -5,6 +5,7 @@
  int gcountHeap;
  int gcountMerge;
  
+//TODOS LOS METODOS
 
 void Sort(int first[],int n,int cont);
 void imprimir(int first[],int n);
@@ -17,7 +18,8 @@ void Split(int A[], int B[], int inicio, int final);
 
  int main(){
     srand((int)time(NULL));
-        
+
+//LOS ARREGLOS  
         int firstHeap[10];
         int firstResultHeap[10];
         int firstMerge[10];
@@ -47,6 +49,8 @@ void Split(int A[], int B[], int inicio, int final);
 
     return 0;
  }
+
+ //EL METODO QUE RELLENA LOS ARREGLOS Y LOS MANDA A SU RESPECTIVO SORT
  void comparaArreglos(int A[], int B[], int C[], int D[], int n){
     int count = 0;
      while(count < 4){
@@ -70,7 +74,7 @@ void Split(int A[], int B[], int inicio, int final);
     }
 }
 
-
+//DONDE SE HACEN LAS COMPARACIONES PARA VER HACIA QUE LADO VA EL NUMERO
  void heap(int first[],int n){
     int valor;
     int i;  
@@ -84,12 +88,11 @@ void Split(int A[], int B[], int inicio, int final);
             first[hijo] = first[raiz];
             hijo = raiz;
             raiz = (hijo-1)/2;
-            gcountHeap++;
         }
         first[hijo] = valor;
     }
  }
-
+//FUNCION RECUSIRVA HASTA LLEGAR AL CASO BASE, ORDENA EL ARREGLO
 void Sort(int first[],int n,int cont){
     if(n<1){
         return;
@@ -105,12 +108,12 @@ void Sort(int first[],int n,int cont){
 }
 
 
-
+//MERGE SORT
 
 void MergeSort(int A[], int B[], int n){
     Split(A, B, 0, n);
 }
-
+//FUNCION RECURSIVA HASTA LLEGAR AL CASO BASE
 void Split(int A[], int B[], int inicio, int final){
     
     int resultado = final-inicio;
@@ -125,7 +128,7 @@ void Split(int A[], int B[], int inicio, int final){
     Merge(A, B, inicio, medio, final);
     Copy(A, B, inicio, final);
 }
-
+//DONDE SE HACEN LAS COMPARACIONES
 void Merge(int A[], int B[], int inicio, int medio, int final){
     int mergeInicio = inicio;
     int mergeMedio = medio;
@@ -148,6 +151,7 @@ void Merge(int A[], int B[], int inicio, int medio, int final){
     }
 }
 
+//SIRVE DE AUXILIAR PARA AYUDAR AL METODO MERGE
 void Copy(int A[], int B[], int inicio, int final){
     int i;
     for (i = inicio; i < final; i++)
@@ -155,6 +159,7 @@ void Copy(int A[], int B[], int inicio, int final){
         A[i] = B[i];
     }
 }
+//IMPRIME LOS ARREGLOS
 void imprimir(int first[],int n){
     int i;
     for(i=0;i<n;i++)

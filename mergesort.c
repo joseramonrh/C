@@ -10,7 +10,7 @@ void Split(int A[], int B[], int inicio, int final);
 int main()
 {	
 	srand((int)time(NULL));
-	printf("hola\n");
+	
 	int first[10];
 	int result[10];
 	int i;

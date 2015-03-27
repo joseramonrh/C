@@ -119,7 +119,9 @@ void imprimete(vertice * vertices){
 		vertices = vertices->vertice;
 	}
 }
-
+void checaCiclos(){
+	vertice * vertices;
+}
 
 int main()
 {

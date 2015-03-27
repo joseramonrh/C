@@ -52,7 +52,7 @@ void Split(int A[], int B[], int inicio, int final);
      while(count < 4){
         int i;
         for(i=0;i<n;i++){
-            int random = rand()%100;
+            int random = rand()%n;
             A[i] = random;
             B[i]= 0;
             C[i] = random;
@@ -92,10 +92,11 @@ void Split(int A[], int B[], int inicio, int final);
  }
 
 void Sort(int first[],int n,int cont){
+    gcountHeap++;
     if(n<1){
         return;
     }
-        gcountHeap++;
+        
         int temp = first[cont];
         first[0] = first[n-1];
         first[n-1] = temp;
@@ -113,12 +114,12 @@ void MergeSort(int A[], int B[], int n){
 }
 
 void Split(int A[], int B[], int inicio, int final){
+    gcountMerge++;
     int resultado = final-inicio;
     if (resultado < 2)
     {
         return;
     }
-    gcountMerge++;
     int medio = (final+inicio)/2;
     
     Split(A, B, medio, final);

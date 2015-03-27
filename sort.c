@@ -24,7 +24,7 @@ void Split(int A[], int B[], int inicio, int final);
         int firstResulMerge[10];
         comparaArreglos(firstHeap, firstResultHeap, firstMerge, firstResulMerge ,10);
 
-        int secondHeap[100];
+        /*int secondHeap[100];
         int secondResultHeap[100];
         int secondMerge[100];
         int secondResultMerge[1000];
@@ -40,7 +40,7 @@ void Split(int A[], int B[], int inicio, int final);
         int fourthResultHeap[10000];
         int fourthMerge[10000];
         int fourthResultMerge[10000];
-        comparaArreglos(fourthHeap, fourthResultHeap, fourthMerge, fourthResultMerge, 10000);
+        comparaArreglos(fourthHeap, fourthResultHeap, fourthMerge, fourthResultMerge, 10000);*/
 
 
 
@@ -65,6 +65,8 @@ void Split(int A[], int B[], int inicio, int final);
         printf("Comparaciones en heap: %d con %d tamaño \n", gcountHeap, n);
         printf("Comparaciones en Merge: %d con %d tamaño \n", gcountMerge, n);
         
+        imprimir(A, n);
+        imprimir(C, n);
 
         gcountHeap = 0;
         gcountMerge = 0;

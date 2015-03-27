@@ -58,7 +58,7 @@ void Split(int A[], int B[], int inicio, int final);
             C[i] = random;
             D[i] = 0;
         }
-        //heap(A,n);
+        heap(A,n);
         Sort(A,n,0);
         MergeSort(C, D, n);
         count++;
@@ -82,7 +82,6 @@ void Split(int A[], int B[], int inicio, int final);
         raiz = (hijo-1)/2;
         while(hijo > 0 && first[raiz] < valor){
             first[hijo] = first[raiz];
-            gcountHeap++;
             hijo = raiz;
             raiz = (hijo-1)/2;
         }
@@ -99,6 +98,7 @@ void Sort(int first[],int n,int cont){
         first[0] = first[n-1];
         first[n-1] = temp;
         heap(first,n-1);
+         gcountHeap++;
         Sort(first,n-1,cont);
         
 

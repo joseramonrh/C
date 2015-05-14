@@ -2,46 +2,67 @@
 #include <stdbool.h>
 
 
+struct Tarea {
+    int num;
+    int penalizacion;
+    int hora;
+};
 typedef struct Tarea tarea;
 
-struct Tarea {
-    int numTarea;
-    int penalizacion;
-    int horaEntrega;
-};
+void imprimir(tarea *arreglo,int tam){
+    int i;
+    for(i=tam -1 ;i>=0;i--){
+        printf("P: %d, ",arreglo[i].penalizacion );
+        printf("#: %d, ",arreglo[i].num );
+        printf("Hora: %d, ",arreglo[i].hora );
+        printf("\n");
+
+    }
+}
 
 
-
-
-void heap(tarea *first,int n){
-    int valor;
-    int i;  
-    int hijo;
-    int raiz;
-    for(i = 1;i<n;i++){
-        valor =  first[i];
-        hijo = i;
-        raiz = (hijo-1)/2;
-
-        while(hijo > 0 && first[raiz] < valor){
-            first[hijo] = first[raiz];
-            hijo = raiz;
-            raiz = (hijo-1)/2;
+int merge(tarea *array,int left,int mid,int right){
+    tarea temp[right-left + 1];
+    int cont =0;
+    int pos = 0, leftPosition = left, rightPosition = mid+1;
+    
+    while(leftPosition <= mid && rightPosition<=right)
+    {
+        if (array[leftPosition].hora < array[rightPosition].hora)
+        {
+            temp[pos++] = array[leftPosition++];
+            cont++;
         }
-        first[hijo] = valor;
+        else
+        {
+            temp[pos++] = array[rightPosition++];
+        }
     }
- }
-
-void Sort(tarea *first,int n,int cont){
-    if(n<1){
-        return;
+    while(leftPosition<=mid)
+        temp[pos++] = array[leftPosition++];
+    while(rightPosition<=right)
+        temp[pos++] = array[rightPosition++];
+    int i;
+    for (i= 0; i < pos; i++)
+    {
+        array[i+left] = temp[i];
     }
-        int temp = first[cont];
-        first[0] = first[n-1];
-        first[n-1] = temp;
-        heap(first,n-1);
-        Sort(first,n-1,cont);
+    return cont;
+}
 
+int mergeSort(tarea *array, int left, int right){
+    int mid = (right+left)/2;
+    int cont =0;
+    if(left<right)
+    {
+        cont++;
+        cont +=mergeSort(array,left,mid);
+        cont += mergeSort(array,mid+1,right);
+        merge(array,left,mid,right);
+    }
+    
+    return cont;
+    
 }
 
 int checarValor(int c[], int valor, int tam){
@@ -53,74 +74,70 @@ int checarValor(int c[], int valor, int tam){
     return 0;
 }
 
-void imprimir(tarea *arreglo,int tam){
-    int i;
-    for(i=tam -1 ;i>=0;i--){
-        printf("Num Tarea: %d, ",arreglo[i].numTarea );
-        printf("Penal: %d, ",arreglo[i].penalizacion );
-        printf("Hora: %d, ",arreglo[i].horaEntrega );
-        printf("\n");
-
-    }
-}
 
 
 int main(){
     int i,j;
-    int penalizacion, horaEntrega,numTareas = 0;
+    int penalizacion, hora,nums = 0;
     int penalizacionTotal = 0;
-    int tiempoTarea = 2;
+    
+    int tiempoTarea = 0;
+    printf("¿Cuanto tarda en entregar una tarea?\n");
+    scanf("%d",&tiempoTarea);
+
     int hora = 0;
-    int max = 6;
-    tarea tareas[max];
-    for(i = 0; i < max;i++){
-        printf("¿Cual es la hora de entrega?\n");
-        scanf("%d",&horaEntrega);
-        printf("Cual es la penalizacion?\n");
+    int cuantasTareas = 6;
+    printf("¿Cuantas tareas?\n");
+    scanf("%d",&cuantasTareas);
+
+    tarea tareas[cuantasTareas];
+    for(i = 0; i < cuantasTareas;i++){
+        printf("¿Hora??\n");
+        scanf("%d",&hora);
+        printf("Penalizacion?\n");
         scanf("%d",&penalizacion);
         tareas[i].penalizacion = penalizacion;
-        tareas[i].horaEntrega = horaEntrega;
-        tareas[i].numTarea = i;
+        tareas[i].hora = hora;
+        tareas[i].num = i;
         penalizacionTotal +=tareas[i].penalizacion;
     }
     
-
-    heap(tareas, max -1);
-    Sort(tareas,0,max);
-    hora = tareas[max -1].horaEntrega;
-    numTareas = tareas[max-1].horaEntrega / tiempoTarea;
+    mergeSort(tareas, 0, cuantasTareas -1);
+    hora = tareas[cuantasTareas -1].hora;
+    nums = tareas[cuantasTareas-1].hora / tiempoTarea;
 
 
     
+    mergeSortPen(tareas, 0, cuantasTareas - 1);
     
-    imprimir(tareas, max);
+    imprimir(tareas, cuantasTareas);
     printf("\n");
-    int tCompletadas[numTareas];
-    for(i =0; i<numTareas;i++){
+    int tCompletadas[nums];
+    for(i =0; i<nums;i++){
         tCompletadas[i] = 0;
     }
     int cont =0;
     for(j = hora;j >= 0; j-=2){
-        for(i = max-1; i >=0; i--){
-            int hr = tareas[i].horaEntrega;
+        for(i = cuantasTareas-1; i >=0; i--){
+            int hr = tareas[i].hora;
             if(hr <= j && hr > j -2){
-                tCompletadas[cont] = tareas[i].numTarea;
+                tCompletadas[cont] = tareas[i].num;
                 cont++;
                 i =0;
             }
            
         }
     }
-    for(i =0; i<numTareas;i++){
+    for(i =0; i<nums;i++){
         if(tCompletadas[i] == 0)
-            for(j = max-1; j >=0; j--){
-             if(checarValor(tCompletadas, tareas[j].numTarea, numTareas) == 0)
-                 tCompletadas[i] = tareas[j].numTarea;
+            for(j = cuantasTareas-1; j >=0; j--){
+             if(checarValor(tCompletadas, tareas[j].num, nums) == 0)
+                 tCompletadas[i] = tareas[j].num;
             }
     }
    
     printf("Hacer las tareas: ");
-    for(i =0; i<numTareas;i++){
+    for(i =0; i<nums;i++){
         printf("%d,",tCompletadas[i]);
     }
     

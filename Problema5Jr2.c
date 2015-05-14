@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdbool.h>
+
 
 
 struct Tarea {
@@ -83,7 +86,7 @@ int main(){
     
 
     heap(tareas, max-1);
-    Sort(tareas, 0 , max-1):
+    Sort(tareas, 0 , max-1);
     //mergeSort(tareas, 0, max -1);
     hora = tareas[max -1].horaEntrega;
     numTareas = tareas[max-1].horaEntrega / tiempoTarea;

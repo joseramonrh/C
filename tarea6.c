@@ -99,7 +99,7 @@ int main(){
 
 	printf("Ingrese el numero a evaluar > ");
 	scanf("%d", &num);
-	Heap(Arreglo, tamano);
+	heap(Arreglo, tamano);
 	Sort(Arreglo, tamano, 0);
 
 	if (compara(Arreglo, num, tamano))

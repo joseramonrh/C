@@ -3,15 +3,15 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-bool compara(double*, double, double);
-void heap(double first[],double n);
-void Sort(double first[],double n,int cont);
+bool compara(int*, int, int);
+void heap(int first[],int n);
+void Sort(int first[],int n,int cont);
 
- void heap(double first[],double n){
-    double valor;
+ void heap(int first[],int n){
+    int valor;
     int i;  
-    double hijo;
-    double raiz;
+    int hijo;
+    int raiz;
     for(i = 1;i<n;i++){
         valor =  first[i];
         hijo = i;
@@ -26,11 +26,11 @@ void Sort(double first[],double n,int cont);
     }
  }
 
-void Sort(double first[],double n,int cont){
+void Sort(int first[],int n,int cont){
     if(n<1){
         return;
     }
-        double temp = first[cont];
+        int temp = first[cont];
         first[0] = first[n-1];
         first[n-1] = temp;
         heap(first,n-1);
@@ -41,7 +41,7 @@ void Sort(double first[],double n,int cont){
 
 
 /*
-bool buscaBin(double * Arreglo, double valor, int izq, int der){
+bool buscaBin(int * Arreglo, int valor, int izq, int der){
 
 	if(Arreglo[izq] == valor)
 		return true;
@@ -67,11 +67,11 @@ bool buscaBin(double * Arreglo, double valor, int izq, int der){
 
 }*/
 
-bool compara(double * Arreglo, double num, double tamano){
+bool compara(int * Arreglo, int num, int tamano){
 	int i;
 	int j;
 	for (i = 0; i < tamano-1; i++){
-		for (int j = 0; j < tamano; j++){
+		for (j = 0; j < tamano; j++){
 		if(Arreglo[j]+Arreglo[i] = num)
 			return true;
 		}
@@ -82,15 +82,15 @@ bool compara(double * Arreglo, double num, double tamano){
 }
 
 int main(){
-	double * Arreglo;
-	double num;
-	double tamano;
+	int * Arreglo;
+	int num;
+	int tamano;
 	int i;
 
 	printf("Tamano del arreglo? ");
 	scanf("%d", &tamano);
 
-	Arreglo = (double*)calloc(tamano, sizeof(double));
+	Arreglo = (int*)calloc(tamano, sizeof(int));
 
 	for (i = 0; i < tamano; i++){
 		printf("Ingrese el numero %d ", i+1);

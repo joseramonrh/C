@@ -99,10 +99,10 @@ int main(){
 
 	printf("Ingrese el numero a evaluar > ");
 	scanf("%lf", &num);
-	Heap(Arreglo, n);
-	Sort(Arreglo, n, 0)
+	Heap(Arreglo, tamano);
+	Sort(Arreglo, tamano, 0)
 
-	if (compara(Arreglo, num, n))
+	if (compara(Arreglo, num, tamano))
 		printf("Existen 2 indices que sumados dan v.");
 	else
 		printf("No existen 2 indices que sumados dan v.");

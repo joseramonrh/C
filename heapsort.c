@@ -91,7 +91,6 @@ void Sort(int first[],int n,int cont){
         first[n-1] = temp;
         heap(first,n-1);
         Sort(first,n-1,cont);
-        gcount++;
 
 }
 

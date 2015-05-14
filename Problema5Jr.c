@@ -10,13 +10,6 @@ struct Tarea {
     int horaEntrega;
 };
 
-int mergePenalizacion(tarea *array,int left,int mid,int right);
-int mergeSortPenalizacion(tarea *array, int left, int right);
-int merge(tarea *array,int left,int mid,int right);
-int mergeSort(tarea *array, int left, int right);
-int checarValor(int c[], int valor, int tam);
-void imprimir(tarea *arreglo,int tam);
-
 
 
 
@@ -93,7 +86,7 @@ int main(){
     
 
     heap(tareas, max -1);
-    Sort(tareas,n,max);
+    Sort(tareas,0,max);
     hora = tareas[max -1].horaEntrega;
     numTareas = tareas[max-1].horaEntrega / tiempoTarea;
 

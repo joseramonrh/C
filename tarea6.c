@@ -3,12 +3,11 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-bool buscaBin(double*, double, int, int);
-bool compara(double*, double, int);
-void heap(double first[],int n);
-void Sort(double first[],int n,int cont);
+bool compara(double*, double, double);
+void heap(double first[],double n);
+void Sort(double first[],double n,int cont);
 
- void heap(double first[],int n){
+ void heap(double first[],double n){
     double valor;
     int i;  
     double hijo;
@@ -27,7 +26,7 @@ void Sort(double first[],int n,int cont);
     }
  }
 
-void Sort(double first[],int n,int cont){
+void Sort(double first[],double n,int cont){
     if(n<1){
         return;
     }
@@ -68,7 +67,7 @@ bool buscaBin(double * Arreglo, double valor, int izq, int der){
 
 }*/
 
-bool compara(double * Arreglo, double num, int tamano){
+bool compara(double * Arreglo, double num, double tamano){
 	int i;
 	int j;
 	for (i = 0; i < tamano-1; i++){
@@ -85,7 +84,8 @@ bool compara(double * Arreglo, double num, int tamano){
 int main(){
 	double * Arreglo;
 	double num;
-	int tamano, i;
+	double tamano;
+	int i;
 
 	printf("Tamano del arreglo? ");
 	scanf("%d", &tamano);
@@ -94,7 +94,7 @@ int main(){
 
 	for (i = 0; i < tamano; i++){
 		printf("Ingrese el numero %d ", i+1);
-		scanf("%d", &Aarreglo[i]);
+		scanf("%d", &Arreglo[i]);
 	}
 
 	printf("Ingrese el numero a evaluar > ");

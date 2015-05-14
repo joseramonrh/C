@@ -68,11 +68,13 @@ void imprimir(tarea *array,int tam){
 
 int main(){
     int i,j;
-    int penalizacion, hora,nums = 0;
+    int count = 0;
+    int entrega = 0;
+    int penalizacion = 0;
     int penalizacionTotal = 0;
     int tiempo = 0;
     printf("¿Cuanto tarda en entregar una tarea?\n");
-    scanf("%d",&tiempoTarea);
+    scanf("%d",&tiempo);
     int hora = 0;
 
     int cantidadTareas = 6;
@@ -82,11 +84,11 @@ int main(){
     tarea tareas[cantidadTareas];
     for(i = 0; i < cantidadTareas;i++){
         printf("¿Cual es la hora de entrega?\n");
-        scanf("%d",&hora);
+        scanf("%d",&entrega);
         printf("Cual es la penalizacion?\n");
         scanf("%d",&penalizacion);
         tareas[i].penalizacion = penalizacion;
-        tareas[i].hora = hora;
+        tareas[i].hora = entrega;
         tareas[i].num = i;
         penalizacionTotal +=tareas[i].penalizacion;
     }
@@ -95,12 +97,12 @@ int main(){
     heap(tareas, cantidadTareas-1);
     Sort(tareas, 0 , cantidadTareas-1);
     hora = tareas[cantidadTareas -1].hora;
-    nums = tareas[cantidadTareas-1].hora / tiempo;
+    count = tareas[cantidadTareas-1].hora / tiempo;
     
     imprimir(tareas, cantidadTareas);
     printf("\n");
-    int tareasHechas[nums];
-    for(i =0; i<nums;i++){
+    int tareasHechas[count];
+    for(i =0; i<count;i++){
         tareasHechas[i] = 0;
     }
     int cont =0;
@@ -115,16 +117,16 @@ int main(){
            
         }
     }
-    for(i =0; i<nums;i++){
+    for(i =0; i<count;i++){
         if(tareasHechas[i] == 0)
             for(j = cantidadTareas-1; j >=0; j--){
-             if(checarValor(tareasHechas, tareas[j].num, nums) == 0)
+             if(checarValor(tareasHechas, tareas[j].num, count) == 0)
                  tareasHechas[i] = tareas[j].num;
             }
     }
    
     printf("Las tareas que conviene hacer: ");
-    for(i =0; i<nums;i++){
+    for(i =0; i<count;i++){
         printf("%d,",tareasHechas[i]);
     }
 

@@ -72,7 +72,7 @@ bool compara(int * Arreglo, int num, int tamano){
 	int j;
 	for (i = 0; i < tamano-1; i++){
 		for (j = 0; j < tamano; j++){
-		if(Arreglo[j]+Arreglo[i] = num)
+		if(Arreglo[j]+Arreglo[i] == num)
 			return true;
 		}
 	}

@@ -13,7 +13,7 @@ struct Tarea {
 
 
 
-void heap(int first[],int n){
+void heap(tarea *first,int n){
     int valor;
     int i;  
     int hijo;
@@ -32,7 +32,7 @@ void heap(int first[],int n){
     }
  }
 
-void Sort(int first[],int n,int cont){
+void Sort(tarea *first,int n,int cont){
     if(n<1){
         return;
     }

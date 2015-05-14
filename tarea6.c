@@ -5,14 +5,14 @@
 
 bool buscaBin(double*, double, int, int);
 bool compara(double*, double, int);
-void heap(int first[],int n);
-void Sort(int first[],int n,int cont);
+void heap(double first[],int n);
+void Sort(double first[],int n,int cont);
 
- void heap(int first[],int n){
-    int valor;
+ void heap(double first[],int n){
+    double valor;
     int i;  
-    int hijo;
-    int raiz;
+    double hijo;
+    double raiz;
     for(i = 1;i<n;i++){
         valor =  first[i];
         hijo = i;
@@ -27,11 +27,11 @@ void Sort(int first[],int n,int cont);
     }
  }
 
-void Sort(int first[],int n,int cont){
+void Sort(double first[],int n,int cont){
     if(n<1){
         return;
     }
-        int temp = first[cont];
+        double temp = first[cont];
         first[0] = first[n-1];
         first[n-1] = temp;
         heap(first,n-1);
@@ -94,13 +94,13 @@ int main(){
 
 	for (i = 0; i < tamano; i++){
 		printf("Ingrese el numero %d ", i+1);
-		scanf("%lf", &Aarreglo[i]);
+		scanf("%d", &Aarreglo[i]);
 	}
 
 	printf("Ingrese el numero a evaluar > ");
-	scanf("%lf", &num);
+	scanf("%d", &num);
 	Heap(Arreglo, tamano);
-	Sort(Arreglo, tamano, 0)
+	Sort(Arreglo, tamano, 0);
 
 	if (compara(Arreglo, num, tamano))
 		printf("Existen 2 indices que sumados dan v.");
